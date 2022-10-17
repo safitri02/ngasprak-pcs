@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class User extends CI_Controller {
+class Contoh extends CI_Controller {
 
 public function __construct()
 {
@@ -17,7 +17,15 @@ public function __construct()
         $data['user'] = $this->User_model->getAllUser();
         //echo "Helooo";
         // print_r($data['user']);
+        $data_json = array(
+            "success" => true,
+            "message" => "Data found",
+            "data" => $data['user'] 
+        );
 
-        $this->load->view('admin/index', $data);
+        header('Content-Type: application/json');
+        echo json_encode($data_json);
     }
-} 
+
+        // $this->load->view('admin/index', $data);
+    }

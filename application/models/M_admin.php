@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class User_model extends CI_Model {
+class M_admin extends CI_Model {
 
     public function getAllUser()
     {
         // echo 'Oke';
-        $query = $this->db->get('user');
+        $query = $this->db->get('admin');
         return $query->result_array();
 
         // Method berantai
